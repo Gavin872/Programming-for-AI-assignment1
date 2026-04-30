@@ -5,11 +5,18 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "numcompute"
 version = "0.1.0"
-description = "A modular scientific computing toolkit built with plain Python and NumPy"
-authors = [
-    { name = "Your Team" }
-]
+description = "A NumPy-based machine learning utility framework"
+requires-python = ">=3.9"
 dependencies = [
-    "numpy",
-    "pytest"
+    "numpy"
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "jupyter"
+]
+
+[tool.setuptools.packages.find]
+include = ["numcompute*"]
+exclude = ["demo*", "tests*"]
